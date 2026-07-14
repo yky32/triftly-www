@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { HeroBackground } from "@/components/hero-background";
 
 export function LandingPage() {
   useEffect(() => {
@@ -58,21 +59,7 @@ export function LandingPage() {
     <main id="top">
       {/* Hero: brand + scenery + CTA */}
       <section className="hero">
-        <div className="hero__atmosphere" aria-hidden="true">
-          <video
-            className="hero__video"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/video/hero-world-poster.jpg"
-          >
-            <source src="/video/hero-world.mp4" type="video/mp4" />
-          </video>
-          <div className="hero__video-shade" />
-          <div className="hero__horizon"></div>
-        </div>
+        <HeroBackground />
 
         <div className="hero__copy">
           <p className="hero__eyebrow">Now launching</p>
