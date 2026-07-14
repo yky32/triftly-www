@@ -56,7 +56,7 @@ export function LandingPage() {
     </header>
 
     <main id="top">
-      {/* Hero: one composition — brand, headline, line, CTA, globe */}
+      {/* Hero: brand + scenery + CTA */}
       <section className="hero">
         <div className="hero__atmosphere" aria-hidden="true">
           <video
@@ -71,9 +71,6 @@ export function LandingPage() {
             <source src="/video/hero-world.mp4" type="video/mp4" />
           </video>
           <div className="hero__video-shade" />
-          <div className="hero__glow hero__glow--a"></div>
-          <div className="hero__glow hero__glow--b"></div>
-          <div className="hero__glow hero__glow--c"></div>
           <div className="hero__horizon"></div>
         </div>
 
@@ -88,83 +85,6 @@ export function LandingPage() {
           <div className="hero__actions">
             <a className="btn btn--primary" href="#download">Download for iPhone</a>
             <a className="btn btn--ghost" href="#worlds">See the worlds</a>
-          </div>
-        </div>
-
-        <div className="hero__stage" aria-hidden="true">
-          <div className="globe-wrap">
-            <svg className="globe" viewBox="0 0 640 640" role="img">
-              <defs>
-                <radialGradient id="ocean" cx="42%" cy="38%" r="62%">
-                  <stop offset="0%" stopColor="#5eead4" stopOpacity="0.55" />
-                  <stop offset="45%" stopColor="#0d9488" stopOpacity="0.85" />
-                  <stop offset="100%" stopColor="#115e59" stopOpacity="1" />
-                </radialGradient>
-                <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#ccfbf1" stopOpacity="0.95" />
-                  <stop offset="100%" stopColor="#99f6e4" stopOpacity="0.55" />
-                </linearGradient>
-                <linearGradient id="route" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#f0fdfa" stopOpacity="0" />
-                  <stop offset="40%" stopColor="#ecfeff" />
-                  <stop offset="100%" stopColor="#fef3c7" stopOpacity="0.9" />
-                </linearGradient>
-                <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="2.2" />
-                </filter>
-              </defs>
-
-              <circle className="globe__disc" cx="320" cy="320" r="236" fill="url(#ocean)" />
-              <ellipse className="globe__sheen" cx="250" cy="230" rx="120" ry="70" fill="#fff" opacity="0.18" />
-
-              {/* continent silhouettes (stylized) */}
-              <g className="globe__lands" fill="url(#land)" opacity="0.75">
-                <path d="M210 230c28-34 78-42 118-18 32 19 28 56 6 74-24 20-62 18-88-2-28-22-48-34-36-54z" />
-                <path d="M360 290c40-8 78 12 86 48 6 28-14 54-44 58-36 5-64-18-72-46-7-24 2-54 30-60z" />
-                <path d="M250 390c36-6 66 18 62 48-4 28-36 40-64 28-24-10-38-36-22-54 8-10 14-20 24-22z" />
-                <path d="M400 200c22-10 48-4 58 18 8 18-2 36-22 42-24 7-48-6-52-26-3-16 4-28 16-34z" />
-              </g>
-
-              {/* latitude lines */}
-              <g className="globe__lines" fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth="1.2">
-                <ellipse cx="320" cy="320" rx="236" ry="70" />
-                <ellipse cx="320" cy="320" rx="236" ry="140" />
-                <ellipse cx="320" cy="320" rx="236" ry="200" />
-                <ellipse cx="320" cy="320" rx="90" ry="236" />
-                <ellipse cx="320" cy="320" rx="170" ry="236" />
-              </g>
-
-              {/* flight routes */}
-              <g className="globe__routes" fill="none" stroke="url(#route)" strokeWidth="2.4" strokeLinecap="round">
-                <path className="route route--a" d="M190 300 C 260 210, 340 210, 430 280" />
-                <path className="route route--b" d="M230 390 C 300 330, 380 340, 450 400" />
-                <path className="route route--c" d="M280 220 C 340 250, 380 310, 410 360" />
-              </g>
-
-              {/* city pins */}
-              <g className="globe__pins">
-                <g className="pin" transform="translate(190 300)">
-                  <circle r="7" fill="#fef3c7" />
-                  <circle r="14" fill="#fef3c7" opacity="0.25" className="pin__pulse" />
-                </g>
-                <g className="pin" transform="translate(430 280)">
-                  <circle r="7" fill="#ecfeff" />
-                  <circle r="14" fill="#ecfeff" opacity="0.25" className="pin__pulse" />
-                </g>
-                <g className="pin" transform="translate(280 220)">
-                  <circle r="6" fill="#fff" />
-                  <circle r="12" fill="#fff" opacity="0.2" className="pin__pulse" />
-                </g>
-                <g className="pin" transform="translate(450 400)">
-                  <circle r="6" fill="#fde68a" />
-                  <circle r="12" fill="#fde68a" opacity="0.22" className="pin__pulse" />
-                </g>
-              </g>
-            </svg>
-
-            <div className="glass-ring"></div>
-            <div className="orbit orbit--1"></div>
-            <div className="orbit orbit--2"></div>
           </div>
         </div>
       </section>
