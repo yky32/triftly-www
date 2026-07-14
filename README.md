@@ -2,6 +2,10 @@
 
 Marketing site for [Triftly](https://www.triftly.app) — Explore · Plan · Spend · Share.
 
+## Live (GitHub Pages)
+
+https://yky32.github.io/triftly-www/
+
 ## Local
 
 ```bash
@@ -11,6 +15,6 @@ npm run dev
 
 ## Deploy
 
-Vercel project pointed at this repo. Build command: `npm run build`. Output: `dist`.
+Pushes to `main` deploy via GitHub Actions → GitHub Pages.
 
-Custom domain: `www.triftly.app`.
+For `www.triftly.app` later: point Vercel (or Pages custom domain) at this repo; build with `GITHUB_PAGES` unset so `base` is `/`.
