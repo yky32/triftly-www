@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/app-icon.png" type="image/png" />
+  <title>Support — Triftly</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f4f9f7;
+      --text: #1c1917;
+      --muted: #78716c;
+      --primary: #0d9488;
+      --card: rgba(255, 255, 255, 0.9);
+      --border: rgba(0, 0, 0, 0.08);
+      --link: #0f766e;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111111;
+        --text: #f5f5f4;
+        --muted: #a8a29e;
+        --card: rgba(30, 30, 32, 0.92);
+        --border: rgba(255, 255, 255, 0.12);
+        --link: #5eead4;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #ccfbf1 0%, var(--bg) 50%);
+      color: var(--text);
+      line-height: 1.55;
+      padding: 24px 16px 48px;
+      display: grid;
+      place-items: start center;
+    }
+    .wrap {
+      width: min(560px, 100%);
+      margin-top: 24px;
+      padding: 28px 24px;
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.1);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+    }
+    h1 { margin: 0 0 8px; font-size: 28px; letter-spacing: -0.02em; }
+    .lead { color: var(--muted); font-size: 15px; margin: 0 0 24px; }
+    h2 { font-size: 16px; margin: 22px 0 8px; }
+    p, li { font-size: 15px; }
+    ul { padding-left: 1.2em; margin: 8px 0; }
+    li { margin: 6px 0; }
+    a { color: var(--link); }
+    .cta {
+      display: block;
+      text-align: center;
+      margin: 8px 0 20px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #fff !important;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .card-soft {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(13, 148, 136, 0.06);
+      font-size: 14px;
+    }
+    .footer {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand">
+      <img src="/app-icon.png" alt="Triftly" />
+      <div>
+        <strong>Triftly</strong><br />
+        <span style="color: var(--muted); font-size: 13px;">Trip plan &amp; split expenses</span>
+      </div>
+    </div>
+
+    <h1>Support</h1>
+    <p class="lead">
+      Need help with sign-in, sync, sharing a trip, or something else? We’re happy to help.
+    </p>
+
+    <a class="cta" href="mailto:yky32is@gmail.com?subject=Triftly%20Support">
+      Email support
+    </a>
+
+    <div class="card-soft">
+      <strong>Email:</strong>
+      <a href="mailto:yky32is@gmail.com">yky32is@gmail.com</a><br />
+      We aim to reply within 1–2 business days.
+    </div>
+
+    <h2>Quick tips</h2>
+    <ul>
+      <li><strong>Sign in</strong> — use Google or Sign in with Apple (iPhone). Email sign-in is coming later.</li>
+      <li><strong>Join a trip</strong> — open the invite link, or paste the join code from Trips.</li>
+      <li><strong>Sync</strong> — sign in, then pull to refresh on Trips or open the trip detail.</li>
+      <li><strong>Can’t open a link</strong> — make sure you’re on a recent TestFlight / App Store build and signed in.</li>
+    </ul>
+
+    <h2>App Store review / demo</h2>
+    <p>
+      If you’re reviewing Triftly for Apple, please use <strong>Sign in with Apple</strong>,
+      or the demo Google account listed in our App Review notes.
+    </p>
+
+    <h2>Legal</h2>
+    <p>
+      <a href="/privacy">Privacy Policy</a>
+    </p>
+
+    <div class="footer">
+      © 2026 WY Limited · Triftly · <a href="https://triftly.app">triftly.app</a>
+    </div>
+  </main>
+</body>
+</html>
