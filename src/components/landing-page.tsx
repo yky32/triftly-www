@@ -59,6 +59,18 @@ export function LandingPage() {
       {/* Hero: one composition — brand, headline, line, CTA, globe */}
       <section className="hero">
         <div className="hero__atmosphere" aria-hidden="true">
+          <video
+            className="hero__video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/video/hero-world-poster.jpg"
+          >
+            <source src="/video/hero-world.mp4" type="video/mp4" />
+          </video>
+          <div className="hero__video-shade" />
           <div className="hero__glow hero__glow--a"></div>
           <div className="hero__glow hero__glow--b"></div>
           <div className="hero__glow hero__glow--c"></div>
