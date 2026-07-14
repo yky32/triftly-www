@@ -5,3 +5,4 @@ dist
 .env
 .env.*
 Icon-72.png
+.vercel
