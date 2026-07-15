@@ -69,6 +69,10 @@ export function LandingPage() {
           <p className="hero__headline">Your trips. Your world.</p>
           <p className="hero__lede">One trip. One shared world.</p>
         </div>
+
+        <a className="hero__scroll" href="#worlds" aria-label="Scroll to explore worlds">
+          <span className="hero__scroll-icon" aria-hidden="true" />
+        </a>
       </section>
 
       {/* Act I — Desire */}
