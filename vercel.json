@@ -2,9 +2,24 @@
   "framework": "nextjs",
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/support", "destination": "/support.html" }
+    { "source": "/support", "destination": "/support.html" },
+    { "source": "/s/:path*", "destination": "https://triftly.app/s/:path*" },
+    { "source": "/map/open", "destination": "https://triftly.app/map/open" },
+    { "source": "/map/open/:path*", "destination": "https://triftly.app/map/open/:path*" }
   ],
   "headers": [
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
