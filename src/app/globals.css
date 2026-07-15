@@ -566,6 +566,7 @@ h2 {
 .device-gallery .device__glow {
   inset: 8% 4% 18%;
   opacity: 0.9;
+  animation: device-glow-breathe 7s ease-in-out infinite;
 }
 
 .device-gallery__row {
@@ -585,10 +586,48 @@ h2 {
   gap: 14px;
   justify-items: center;
   flex: 0 0 auto;
+  opacity: 0;
+  transform: translateY(28px) scale(0.96);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.device-gallery.reveal.is-visible .device-gallery__item {
+  opacity: 1;
+  transform: none;
+}
+
+.device-gallery.reveal.is-visible .device-gallery__item:nth-child(1) {
+  transition-delay: 0.06s;
+}
+
+.device-gallery.reveal.is-visible .device-gallery__item:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+.device-gallery.reveal.is-visible .device-gallery__item:nth-child(3) {
+  transition-delay: 0.3s;
 }
 
 .device-gallery__item .device-frame {
   width: clamp(147px, 23vw, 225px);
+  will-change: transform;
+  transition: filter 0.4s ease;
+}
+
+.device-gallery.reveal.is-visible .device-gallery__item:nth-child(1) .device-frame {
+  animation: device-float-left 5.6s ease-in-out infinite;
+}
+
+.device-gallery.reveal.is-visible .device-gallery__item:nth-child(2) .device-frame {
+  animation: device-float-mid 4.8s ease-in-out infinite;
+  animation-delay: 0.35s;
+}
+
+.device-gallery.reveal.is-visible .device-gallery__item:nth-child(3) .device-frame {
+  animation: device-float-right 5.6s ease-in-out infinite;
+  animation-delay: 0.7s;
 }
 
 .device-gallery__item--mid {
@@ -597,7 +636,23 @@ h2 {
 
 .device-gallery__item--mid .device-frame {
   width: clamp(170px, 26.5vw, 262px);
-  transform: translateY(-14px);
+}
+
+.device-gallery__item:hover .device-frame {
+  animation-play-state: paused;
+  filter: drop-shadow(0 18px 28px rgba(13, 148, 136, 0.22));
+}
+
+.device-gallery__item:nth-child(1):hover .device-frame {
+  transform: translateY(-14px) rotate(-1.5deg) scale(1.035);
+}
+
+.device-gallery__item:nth-child(2):hover .device-frame {
+  transform: translateY(-28px) scale(1.04);
+}
+
+.device-gallery__item:nth-child(3):hover .device-frame {
+  transform: translateY(-14px) rotate(1.5deg) scale(1.035);
 }
 
 .device-gallery__item .device-frame__chrome {
@@ -644,6 +699,48 @@ h2 {
   font-weight: 700;
   color: var(--teal-deep);
   background: var(--teal-mist);
+}
+
+@keyframes device-float-left {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.4deg);
+  }
+  50% {
+    transform: translateY(-11px) rotate(-0.5deg);
+  }
+}
+
+@keyframes device-float-mid {
+  0%,
+  100% {
+    transform: translateY(-14px);
+  }
+  50% {
+    transform: translateY(-28px);
+  }
+}
+
+@keyframes device-float-right {
+  0%,
+  100% {
+    transform: translateY(0) rotate(1.4deg);
+  }
+  50% {
+    transform: translateY(-11px) rotate(0.5deg);
+  }
+}
+
+@keyframes device-glow-breathe {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .phone-ui {
@@ -930,7 +1027,34 @@ h2 {
   .device-gallery__item .device-frame,
   .device-gallery__item--mid .device-frame {
     width: min(67vw, 230px);
-    transform: none;
+  }
+
+  .device-gallery.reveal.is-visible .device-gallery__item:nth-child(1) .device-frame {
+    animation-name: device-float-mobile;
+  }
+
+  .device-gallery.reveal.is-visible .device-gallery__item:nth-child(2) .device-frame {
+    animation-name: device-float-mobile;
+  }
+
+  .device-gallery.reveal.is-visible .device-gallery__item:nth-child(3) .device-frame {
+    animation-name: device-float-mobile;
+  }
+
+  .device-gallery__item:nth-child(1):hover .device-frame,
+  .device-gallery__item:nth-child(2):hover .device-frame,
+  .device-gallery__item:nth-child(3):hover .device-frame {
+    transform: translateY(-10px) scale(1.03);
+  }
+}
+
+@keyframes device-float-mobile {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }
 
@@ -943,6 +1067,11 @@ h2 {
   }
 
   .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .device-gallery__item {
     opacity: 1;
     transform: none;
   }
