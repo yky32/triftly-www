@@ -87,28 +87,82 @@ export function LandingPage() {
           </p>
         </div>
 
-        <div className="world-rail reveal" aria-hidden="true">
+        <div className="world-rail reveal">
           <article className="world-tile world-tile--hk">
+            <img
+              className="world-tile__img"
+              src="/worlds/hong-kong.jpg"
+              alt=""
+              width={720}
+              height={960}
+              loading="lazy"
+              decoding="async"
+            />
             <span className="world-tile__place">Hong Kong</span>
             <span className="world-tile__tag">Harbour lights</span>
           </article>
           <article className="world-tile world-tile--tko">
+            <img
+              className="world-tile__img"
+              src="/worlds/tokyo.jpg"
+              alt=""
+              width={720}
+              height={960}
+              loading="lazy"
+              decoding="async"
+            />
             <span className="world-tile__place">Tokyo</span>
             <span className="world-tile__tag">Neon streets</span>
           </article>
           <article className="world-tile world-tile--sel">
+            <img
+              className="world-tile__img"
+              src="/worlds/seoul.jpg"
+              alt=""
+              width={720}
+              height={960}
+              loading="lazy"
+              decoding="async"
+            />
             <span className="world-tile__place">Seoul</span>
             <span className="world-tile__tag">Night markets</span>
           </article>
           <article className="world-tile world-tile--bkk">
+            <img
+              className="world-tile__img"
+              src="/worlds/bangkok.jpg"
+              alt=""
+              width={720}
+              height={960}
+              loading="lazy"
+              decoding="async"
+            />
             <span className="world-tile__place">Bangkok</span>
             <span className="world-tile__tag">Golden hours</span>
           </article>
           <article className="world-tile world-tile--tpe">
+            <img
+              className="world-tile__img"
+              src="/worlds/taipei.jpg"
+              alt=""
+              width={720}
+              height={960}
+              loading="lazy"
+              decoding="async"
+            />
             <span className="world-tile__place">Taipei</span>
             <span className="world-tile__tag">Mountain mist</span>
           </article>
           <article className="world-tile world-tile--sg">
+            <img
+              className="world-tile__img"
+              src="/worlds/singapore.jpg"
+              alt=""
+              width={720}
+              height={960}
+              loading="lazy"
+              decoding="async"
+            />
             <span className="world-tile__place">Singapore</span>
             <span className="world-tile__tag">Garden city</span>
           </article>
