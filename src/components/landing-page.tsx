@@ -128,7 +128,6 @@ export function LandingPage() {
           </div>
 
           <div className="device-gallery device-gallery--static reveal">
-            <div className="device__stage" aria-hidden="true" />
             <ol className="device-gallery__row">
               <li className="device-gallery__item">
                 <figure className="device-frame">

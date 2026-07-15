@@ -765,26 +765,6 @@ h2 {
   width: 100%;
 }
 
-.device-gallery--static .device__stage {
-  position: absolute;
-  left: 50%;
-  bottom: 10%;
-  z-index: 0;
-  width: min(100%, 420px);
-  height: 44%;
-  transform: translateX(-50%);
-  border-radius: 36px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(204, 251, 241, 0.32) 0%,
-      rgba(247, 245, 242, 0.5) 100%
-    );
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
-  pointer-events: none;
-}
-
 .device-gallery--static .device-gallery__row {
   align-items: flex-end;
   justify-content: flex-end;
@@ -1147,11 +1127,6 @@ h2 {
 
   .device-gallery--static .device-gallery__item .device-frame {
     width: min(42vw, 168px);
-  }
-
-  .device-gallery--static .device__stage {
-    width: min(96%, 380px);
-    height: 36%;
   }
 
   .device-gallery.reveal.is-visible .device-gallery__item:nth-child(1) .device-frame {
