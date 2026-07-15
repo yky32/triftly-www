@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Triftly — Explore · Plan · Spend · Share",
   applicationName: "Triftly",
   description:
-    "Triftly is your travel world — plan days on the map, split spends with buddies, and keep every trip in one place.",
+    "One trip. One shared world. Plan days, split spends with buddies, and keep everyone in sync.",
   metadataBase: new URL("https://www.triftly.app"),
   alternates: { canonical: "/" },
   icons: {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Triftly",
-    description: "Explore · Plan · Spend · Share. Your trips. Your world.",
+    description: "One trip. One shared world.",
     url: "https://www.triftly.app",
     siteName: "Triftly",
     images: [{ url: "/og.png", width: 1024, height: 1024, alt: "Triftly" }],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Triftly",
-    description: "Explore · Plan · Spend · Share. Your trips. Your world.",
+    description: "One trip. One shared world.",
     images: ["/og.png"],
   },
 };

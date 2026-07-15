@@ -67,21 +67,18 @@ export function LandingPage() {
           <p className="hero__eyebrow">Now launching</p>
           <h1 className="hero__brand">Triftly</h1>
           <p className="hero__headline">Your trips. Your world.</p>
-          <p className="hero__lede">
-            Explore places, plan every day on the map, spend with buddies — then
-            share the story.
-          </p>
+          <p className="hero__lede">One trip. One shared world.</p>
         </div>
       </section>
 
-      {/* Worlds */}
+      {/* Act I — Desire */}
       <section className="section worlds" id="worlds">
         <div className="section__intro reveal">
           <p className="kicker">Worlds</p>
-          <h2>Every destination feels like another world.</h2>
+          <h2>Where will you go?</h2>
           <p className="section__lede">
-            From Hong Kong weekends to Tokyo seasons — open a trip and step into
-            a map that already knows where you’re going.
+            Every destination opens a world of its own. Step into Tokyo — and
+            let the days begin.
           </p>
         </div>
 
@@ -99,7 +96,7 @@ export function LandingPage() {
             <span className="world-tile__place">Hong Kong</span>
             <span className="world-tile__tag">Harbour lights</span>
           </article>
-          <article className="world-tile world-tile--tko">
+          <article className="world-tile world-tile--tko world-tile--featured">
             <img
               className="world-tile__img"
               src="/worlds/tokyo.jpg"
@@ -167,15 +164,17 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Plan — text left, devices right */}
+      <p className="story-bridge reveal">Then the days start moving.</p>
+
+      {/* Act II — Plan */}
       <section className="section feature feature--plan" id="plan">
         <div className="feature__grid">
           <div className="feature__copy reveal">
-            <p className="kicker">Plan</p>
+            <p className="kicker">Plan · Tokyo 2026</p>
             <h2>Days that move with you.</h2>
             <p className="section__lede">
-              Create the trip with flights and buddies, then shape each day —
-              open maps, mark visited, add spend, or move a spot when plans change.
+              Flights in. Buddies in. Pin Ichiran for Day 1 — then reshape the
+              route when the city has other plans.
             </p>
           </div>
 
@@ -196,7 +195,7 @@ export function LandingPage() {
                 </figure>
                 <p className="device-gallery__caption">
                   <span aria-hidden="true">1</span>
-                  Create
+                  Open the trip
                 </p>
               </li>
               <li className="device-gallery__item">
@@ -214,7 +213,7 @@ export function LandingPage() {
                 </figure>
                 <p className="device-gallery__caption">
                   <span aria-hidden="true">2</span>
-                  Shape
+                  Shape the day
                 </p>
               </li>
             </ol>
@@ -222,14 +221,16 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Spend — add → track → settle */}
+      <p className="story-bridge reveal">When the bill arrives…</p>
+
+      {/* Act III — Spend */}
       <section className="section feature feature--spend" id="spend">
         <div className="feature__intro reveal">
-          <p className="kicker">Spend</p>
+          <p className="kicker">Spend · Ichiran with friends</p>
           <h2>Split fairly. Settle gently.</h2>
           <p className="section__lede">
-            Log a spot spend, watch the trip total unfold, then settle with a
-            quiet Remind — or mark Paid when it’s done.
+            Ramen for four. Equal shares. A quiet Remind when someone’s still
+            owing — no awkward chats in the group.
           </p>
         </div>
 
@@ -251,7 +252,7 @@ export function LandingPage() {
               </figure>
               <p className="device-gallery__caption">
                 <span aria-hidden="true">1</span>
-                Log
+                Log the meal
               </p>
             </li>
             <li className="device-gallery__item device-gallery__item--mid">
@@ -269,7 +270,7 @@ export function LandingPage() {
               </figure>
               <p className="device-gallery__caption">
                 <span aria-hidden="true">2</span>
-                Track
+                See the trip total
               </p>
             </li>
             <li className="device-gallery__item">
@@ -287,21 +288,23 @@ export function LandingPage() {
               </figure>
               <p className="device-gallery__caption">
                 <span aria-hidden="true">3</span>
-                Settle
+                Settle soft
               </p>
             </li>
           </ol>
         </div>
       </section>
 
+      <p className="story-bridge reveal">Invite them into the same world.</p>
+
       <ShareDemo />
 
-      {/* Download */}
+      {/* Own it */}
       <section className="section download" id="download">
         <div className="download__panel glass reveal">
           <img className="download__icon" src="/app-icon.png" width="72" height="72" alt="Triftly app icon" />
-          <h2>Start your next world.</h2>
-          <p>Triftly for iPhone — explore, plan, spend, and share.</p>
+          <h2>Take the trip with you.</h2>
+          <p>Your next world starts on iPhone.</p>
           <a
             className="btn btn--primary btn--store"
             href="https://apps.apple.com/us/search?term=triftly"
@@ -315,7 +318,7 @@ export function LandingPage() {
             </svg>
             Download on the App Store
           </a>
-          <p className="download__note">Also available on TestFlight while we roll out.</p>
+          <p className="download__note">Also on TestFlight while we roll out.</p>
         </div>
       </section>
     </main>

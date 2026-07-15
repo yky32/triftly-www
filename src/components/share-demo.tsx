@@ -57,11 +57,11 @@ export function ShareDemo() {
     <section className="section feature feature--share" id="share">
       <div className="feature__grid">
         <div className="feature__copy reveal">
-          <p className="kicker">Share</p>
+          <p className="kicker">Share · with Kary</p>
           <h2>Invite a buddy. Sync the trip.</h2>
           <p className="section__lede">
-            Send one link. Your buddy joins — then plans, spends, and the map
-            stay live on both phones.
+            Send the Tokyo link. Kary joins — and the plan, the spends, and the
+            map stay alive on both phones.
           </p>
 
           <div
