@@ -542,8 +542,9 @@ h2 {
   background: #f7f5f2;
 }
 
-/* Spend story — Log → Track → Settle */
-.feature--spend {
+/* Spend / Plan story galleries */
+.feature--spend,
+.feature--plan {
   max-width: 1120px;
   margin-inline: auto;
 }
@@ -741,6 +742,15 @@ h2 {
     opacity: 1;
     transform: scale(1.05);
   }
+}
+
+/* Two-phone Plan gallery — a bit larger */
+.device-gallery--pair .device-gallery__item .device-frame {
+  width: clamp(165px, 25vw, 248px);
+}
+
+.device-gallery--pair .device-gallery__item--mid .device-frame {
+  width: clamp(188px, 28vw, 286px);
 }
 
 .phone-ui {

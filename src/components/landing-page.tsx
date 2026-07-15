@@ -115,55 +115,57 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Plan */}
-      <section className="section feature" id="plan">
-        <div className="feature__grid">
-          <div className="feature__copy reveal">
-            <p className="kicker">Plan</p>
-            <h2>Days that move with you.</h2>
-            <p className="section__lede">
-              Pin spots, reorder the day, link flights, and watch your route
-              come alive — liquid-clear on a map built for travelers.
-            </p>
-          </div>
-          <div className="device reveal" aria-hidden="true">
-            <div className="device__bezel glass">
-              <div className="phone-ui">
-                <div className="phone-ui__bar">
-                  <span>東京 2026</span>
-                  <span className="pill">Plan</span>
+      {/* Plan — create → shape the days */}
+      <section className="section feature feature--plan" id="plan">
+        <div className="feature__intro reveal">
+          <p className="kicker">Plan</p>
+          <h2>Days that move with you.</h2>
+          <p className="section__lede">
+            Create the trip with flights and buddies, then shape each day —
+            open maps, mark visited, add spend, or move a spot when plans change.
+          </p>
+        </div>
+
+        <div className="device-gallery device-gallery--pair reveal">
+          <div className="device__glow" aria-hidden="true" />
+          <ol className="device-gallery__row">
+            <li className="device-gallery__item">
+              <figure className="device-frame">
+                <div className="device-frame__chrome">
+                  <img
+                    src="/screens/plan-create.jpg"
+                    width={472}
+                    height={1024}
+                    alt="Create a new trip — destination, dates, flights, currency, and travel buddies"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
-                <div className="phone-ui__map">
-                  <svg viewBox="0 0 320 220" className="mini-map">
-                    <defs>
-                      <linearGradient id="mapFill" x1="0" y1="0" x2="1" y2="1">
-                        <stop stopColor="#ccfbf1" />
-                        <stop offset="1" stopColor="#99f6e4" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="320" height="220" rx="18" fill="url(#mapFill)" opacity="0.35" />
-                    <path
-                      d="M40 170 C 90 120, 140 150, 180 90 S 260 40, 290 70"
-                      fill="none"
-                      stroke="#0f766e"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeDasharray="6 8"
-                      className="dash"
-                    />
-                    <circle cx="40" cy="170" r="7" fill="#0d9488" />
-                    <circle cx="180" cy="90" r="7" fill="#14b8a6" />
-                    <circle cx="290" cy="70" r="7" fill="#f59e0b" />
-                  </svg>
+              </figure>
+              <p className="device-gallery__caption">
+                <span aria-hidden="true">1</span>
+                Create
+              </p>
+            </li>
+            <li className="device-gallery__item device-gallery__item--mid">
+              <figure className="device-frame">
+                <div className="device-frame__chrome">
+                  <img
+                    src="/screens/plan-days.jpg"
+                    width={472}
+                    height={1024}
+                    alt="Plan tab for Tokyo 2026 — day itinerary with spot actions like open in maps and add expense"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
-                <div className="phone-ui__list">
-                  <div className="spot"><b>Ichiran Ramen</b><span>12:30</span></div>
-                  <div className="spot"><b>Shibuya Crossing</b><span>15:00</span></div>
-                  <div className="spot"><b>TeamLab</b><span>18:30</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
+              </figure>
+              <p className="device-gallery__caption">
+                <span aria-hidden="true">2</span>
+                Shape
+              </p>
+            </li>
+          </ol>
         </div>
       </section>
 
