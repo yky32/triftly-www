@@ -33,9 +33,39 @@ export function LandingPage() {
       reveals.forEach((el) => el.classList.add("is-visible"));
     }
 
+    const sectionIds = ["worlds", "plan", "spend", "share"] as const;
+    const links = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>("[data-nav-link]"),
+    );
+    let sectionIo: IntersectionObserver | null = null;
+    if ("IntersectionObserver" in window && links.length) {
+      const setActive = (id: string) => {
+        for (const link of links) {
+          link.classList.toggle(
+            "is-active",
+            link.getAttribute("href") === `#${id}`,
+          );
+        }
+      };
+      sectionIo = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((e) => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (visible?.target.id) setActive(visible.target.id);
+        },
+        { threshold: [0.25, 0.45, 0.6], rootMargin: "-18% 0px -42% 0px" },
+      );
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) sectionIo.observe(el);
+      }
+    }
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       io?.disconnect();
+      sectionIo?.disconnect();
     };
   }, []);
 
@@ -46,14 +76,14 @@ export function LandingPage() {
 
     <header className="nav" data-nav>
       <a className="nav__brand" href="#top" aria-label="Triftly home">
-        <img src="/app-icon.png" width="28" height="28" alt="" />
+        <img src="/app-icon.png" width="26" height="26" alt="" />
         <span>Triftly</span>
       </a>
       <nav className="nav__links" aria-label="Primary">
-        <a href="#worlds">Worlds</a>
-        <a href="#plan">Plan</a>
-        <a href="#spend">Spend</a>
-        <a href="#share">Share</a>
+        <a href="#worlds" data-nav-link>Worlds</a>
+        <a href="#plan" data-nav-link>Plan</a>
+        <a href="#spend" data-nav-link>Spend</a>
+        <a href="#share" data-nav-link>Share</a>
       </nav>
       <a className="nav__cta" href="#download">Get the app</a>
     </header>
