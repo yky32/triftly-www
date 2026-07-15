@@ -142,7 +142,7 @@ export function ShareDemo() {
                 </div>
               </div>
             </div>
-            <figcaption className="share-phone__caption">Host</figcaption>
+            <figcaption className="share-phone__caption">You</figcaption>
           </figure>
 
           <div className="share-bridge" aria-hidden="true">
@@ -203,7 +203,7 @@ export function ShareDemo() {
                 )}
               </div>
             </div>
-            <figcaption className="share-phone__caption">Buddy</figcaption>
+            <figcaption className="share-phone__caption">Kary</figcaption>
           </figure>
         </div>
       </div>

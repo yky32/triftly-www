@@ -1057,28 +1057,27 @@ h2 {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: clamp(12px, 2vw, 22px);
+  gap: clamp(16px, 2.5vw, 28px);
   width: 100%;
-  min-height: 380px;
-  padding: 12px 4px 8px;
-  /* Always visible — this is the payoff of the section */
+  min-height: 400px;
+  padding: 20px 8px 12px;
   opacity: 1 !important;
   transform: none !important;
 }
 
 .share-demo__glow {
   position: absolute;
-  inset: 8% 2% 12%;
+  inset: 4% -4% 8%;
   z-index: 0;
-  border-radius: 48%;
+  border-radius: 50%;
   background:
     radial-gradient(
-      ellipse at 50% 55%,
-      rgba(153, 246, 228, 0.55) 0%,
-      rgba(204, 251, 241, 0.22) 48%,
-      transparent 72%
+      ellipse at 50% 60%,
+      rgba(204, 251, 241, 0.7) 0%,
+      rgba(236, 253, 245, 0.35) 42%,
+      transparent 70%
     );
-  filter: blur(26px);
+  filter: blur(32px);
   pointer-events: none;
 }
 
@@ -1087,78 +1086,103 @@ h2 {
   z-index: 1;
   margin: 0;
   display: grid;
-  gap: 12px;
+  gap: 14px;
   justify-items: center;
   flex: 0 0 auto;
 }
 
+/* Floating glass UI surface — no heavy device chrome */
 .share-phone__chrome {
-  width: clamp(168px, 22vw, 248px);
-  border-radius: 32px;
-  padding: 8px;
-  background: #141416;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 24px 48px -20px rgba(15, 23, 42, 0.5),
-    0 12px 28px -18px rgba(13, 148, 136, 0.35);
+  width: clamp(180px, 23vw, 260px);
+  border-radius: 28px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.share-phone--host .share-phone__chrome {
+  transform: rotate(-1.5deg) translateY(-6px);
 }
 
 .share-phone--buddy .share-phone__chrome {
-  transform: translateY(10px);
+  transform: rotate(1.5deg) translateY(8px);
 }
 
 .share-phone__screen {
   position: relative;
-  min-height: 340px;
-  border-radius: 25px;
-  padding: 16px 14px;
-  background: linear-gradient(180deg, #fbfaf8, #f3f1ed);
+  min-height: 360px;
+  border-radius: 28px;
+  padding: 22px 18px;
+  background:
+    linear-gradient(
+      165deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.78) 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(28, 25, 23, 0.04),
+    0 28px 56px -28px rgba(15, 23, 42, 0.35),
+    0 12px 28px -20px rgba(13, 148, 136, 0.22);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
   overflow: hidden;
 }
 
 .share-phone__caption {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink-soft);
 }
 
 .share-bridge {
   position: relative;
   z-index: 1;
-  width: clamp(36px, 5vw, 56px);
-  height: 3px;
-  margin-bottom: 140px;
+  width: clamp(40px, 5.5vw, 64px);
+  height: 2px;
+  margin-bottom: 150px;
   border-radius: 999px;
-  background: rgba(13, 148, 136, 0.22);
+  background: linear-gradient(
+    90deg,
+    rgba(13, 148, 136, 0.15),
+    rgba(13, 148, 136, 0.45),
+    rgba(13, 148, 136, 0.15)
+  );
   flex: 0 0 auto;
 }
 
 .share-bridge__label {
   position: absolute;
   left: 50%;
-  top: -22px;
+  top: -26px;
   transform: translateX(-50%);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
   color: var(--teal-deep);
   white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(13, 148, 136, 0.12);
+  box-shadow: 0 6px 16px -12px rgba(13, 148, 136, 0.45);
 }
 
 .share-bridge__packet {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 10px;
-  height: 10px;
-  margin-top: -5px;
+  width: 9px;
+  height: 9px;
+  margin-top: -4.5px;
   border-radius: 999px;
   background: var(--teal);
-  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.18);
-  opacity: 0.35;
+  box-shadow: 0 0 0 5px rgba(13, 148, 136, 0.14);
+  opacity: 0.4;
   transition: left 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
 }
 
@@ -1174,13 +1198,14 @@ h2 {
 
 .share-ui__top {
   display: grid;
-  gap: 2px;
-  margin-bottom: 12px;
+  gap: 3px;
+  margin-bottom: 16px;
 }
 
 .share-ui__top strong {
-  font-size: 15px;
-  letter-spacing: -0.03em;
+  font-size: 17px;
+  letter-spacing: -0.035em;
+  font-weight: 800;
 }
 
 .share-ui__muted {
@@ -1190,18 +1215,18 @@ h2 {
 }
 
 .share-ui__card {
-  border-radius: 14px;
-  padding: 12px;
-  background: #fff;
-  border: 1px solid rgba(15, 118, 110, 0.08);
-  box-shadow: 0 8px 20px -16px rgba(15, 23, 42, 0.35);
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(247, 245, 242, 0.72);
+  border: 1px solid rgba(15, 118, 110, 0.06);
 }
 
 .share-ui__label {
-  margin: 0 0 8px;
-  font-size: 11px;
+  margin: 0 0 10px;
+  font-size: 12px;
   font-weight: 700;
-  color: var(--ink-soft);
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
 
 .share-ui__link {
@@ -1209,10 +1234,11 @@ h2 {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding: 8px 10px;
-  border-radius: 10px;
-  background: var(--teal-mist);
-  font-size: 10px;
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(13, 148, 136, 0.12);
+  font-size: 11px;
   font-weight: 700;
   color: var(--teal-deep);
 }
@@ -1220,9 +1246,10 @@ h2 {
 .share-ui__link em {
   font-style: normal;
   font-size: 10px;
-  padding: 3px 7px;
+  padding: 4px 8px;
   border-radius: 999px;
-  background: #fff;
+  background: var(--teal-mist);
+  color: var(--teal-deep);
 }
 
 .share-ui__link.is-pulse {
@@ -1233,26 +1260,27 @@ h2 {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 .share-ui__avatar {
   display: inline-grid;
   place-items: center;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
   font-size: 11px;
   font-weight: 800;
   color: #fff;
+  box-shadow: 0 6px 14px -8px rgba(13, 148, 136, 0.7);
 }
 
 .share-ui__avatar--you {
-  background: #0d9488;
+  background: linear-gradient(145deg, #14b8a6, #0f766e);
 }
 
 .share-ui__avatar--kary {
-  background: #34d399;
+  background: linear-gradient(145deg, #6ee7b7, #10b981);
   opacity: 0;
   transform: scale(0.7);
   transition: opacity 0.45s ease, transform 0.45s ease;
@@ -1264,14 +1292,14 @@ h2 {
 }
 
 .share-ui__people-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--ink-soft);
 }
 
 .share-ui__note {
-  margin-top: 16px;
-  font-size: 11px;
+  margin-top: 20px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--muted);
 }
@@ -1280,63 +1308,65 @@ h2 {
   display: grid;
   place-items: center;
   text-align: center;
-  min-height: 260px;
+  min-height: 300px;
   gap: 6px;
   color: var(--muted);
 }
 
 .share-ui__waiting p {
-  margin: 8px 0 0;
-  font-size: 13px;
+  margin: 10px 0 0;
+  font-size: 14px;
   font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--ink-soft);
 }
 
 .share-ui__waiting small {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .share-ui__orb {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 999px;
   background:
-    radial-gradient(circle at 35% 30%, #fff, transparent 45%),
-    linear-gradient(145deg, #99f6e4, #0d9488);
-  opacity: 0.55;
+    radial-gradient(circle at 35% 30%, #fff, transparent 48%),
+    linear-gradient(145deg, #ccfbf1, #14b8a6);
+  opacity: 0.85;
+  box-shadow: 0 12px 28px -14px rgba(13, 148, 136, 0.55);
 }
 
 .share-ui__join {
   display: grid;
   gap: 6px;
-  padding-top: 28px;
+  padding-top: 36px;
   text-align: center;
 }
 
 .share-ui__join strong {
-  font-size: 20px;
-  letter-spacing: -0.03em;
+  font-size: 22px;
+  letter-spacing: -0.04em;
 }
 
 .share-ui__join-btn {
-  margin: 16px auto 0;
+  margin: 18px auto 0;
   appearance: none;
   border: 0;
   cursor: default;
   font: inherit;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: #fff;
-  background: var(--teal);
-  padding: 10px 18px;
+  background: linear-gradient(180deg, #14b8a6, #0d9488);
+  padding: 11px 20px;
   border-radius: 999px;
-  box-shadow: 0 10px 22px -12px rgba(13, 148, 136, 0.9);
+  box-shadow: 0 12px 24px -12px rgba(13, 148, 136, 0.85);
   animation: share-pulse 1.6s ease-in-out infinite;
 }
 
 .share-ui__synced {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .share-ui__spot {
@@ -1344,20 +1374,22 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 8px;
-  padding: 10px 11px;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid rgba(13, 148, 136, 0.1);
-  font-size: 11px;
+  padding: 12px 13px;
+  border-radius: 16px;
+  background: rgba(247, 245, 242, 0.8);
+  border: 1px solid rgba(13, 148, 136, 0.07);
+  font-size: 12px;
 }
 
 .share-ui__spot b {
   letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 .share-ui__spot span {
   color: var(--teal-deep);
   font-weight: 700;
+  font-size: 11px;
 }
 
 .share-ui__spot--soft span {
@@ -1366,8 +1398,8 @@ h2 {
 }
 
 .share-ui__check {
-  margin: 8px 0 0;
-  font-size: 11px;
+  margin: 10px 0 0;
+  font-size: 12px;
   font-weight: 700;
   color: var(--teal-deep);
 }
@@ -1534,19 +1566,24 @@ h2 {
 
   .share-demo {
     justify-content: center;
-    min-height: 320px;
+    min-height: 340px;
   }
 
   .share-phone__chrome {
-    width: min(44vw, 200px);
+    width: min(44vw, 210px);
+  }
+
+  .share-phone--host .share-phone__chrome,
+  .share-phone--buddy .share-phone__chrome {
+    transform: none;
   }
 
   .share-phone__screen {
-    min-height: 280px;
+    min-height: 300px;
   }
 
   .share-bridge {
-    margin-bottom: 110px;
+    margin-bottom: 120px;
   }
 
   .feature__copy {
