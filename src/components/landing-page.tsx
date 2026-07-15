@@ -167,32 +167,75 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Spend */}
-      <section className="section feature feature--reverse" id="spend">
-        <div className="feature__grid">
-          <div className="feature__copy reveal">
-            <p className="kicker">Spend</p>
-            <h2>Split fairly. Settle gently.</h2>
-            <p className="section__lede">
-              See the trip total, who still owes, and settle with a quiet
-              Remind — or mark Paid when it’s done. Fair splits, no awkwardness.
-            </p>
-          </div>
-          <div className="device device--photo reveal">
-            <div className="device__glow" aria-hidden="true" />
-            <figure className="device-frame">
-              <div className="device-frame__chrome">
-                <img
-                  src="/screens/settlement.jpg"
-                  width={472}
-                  height={1024}
-                  alt="Triftly settlement sheet for Tokyo 2026 — trip total, outstanding payments, and pay-back actions"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </figure>
-          </div>
+      {/* Spend — add → track → settle */}
+      <section className="section feature feature--spend" id="spend">
+        <div className="feature__intro reveal">
+          <p className="kicker">Spend</p>
+          <h2>Split fairly. Settle gently.</h2>
+          <p className="section__lede">
+            Log a spot spend, watch the trip total unfold, then settle with a
+            quiet Remind — or mark Paid when it’s done.
+          </p>
+        </div>
+
+        <div className="device-gallery reveal">
+          <div className="device__glow" aria-hidden="true" />
+          <ol className="device-gallery__row">
+            <li className="device-gallery__item">
+              <figure className="device-frame">
+                <div className="device-frame__chrome">
+                  <img
+                    src="/screens/spend-add.jpg"
+                    width={472}
+                    height={1024}
+                    alt="Add a spot spend — choose currency, amount, receipt, and equal split"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </figure>
+              <p className="device-gallery__caption">
+                <span aria-hidden="true">1</span>
+                Log
+              </p>
+            </li>
+            <li className="device-gallery__item device-gallery__item--mid">
+              <figure className="device-frame">
+                <div className="device-frame__chrome">
+                  <img
+                    src="/screens/spend-overview.jpg"
+                    width={472}
+                    height={1024}
+                    alt="Spend tab overview — today, trip total, categories, and buddy shares"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </figure>
+              <p className="device-gallery__caption">
+                <span aria-hidden="true">2</span>
+                Track
+              </p>
+            </li>
+            <li className="device-gallery__item">
+              <figure className="device-frame">
+                <div className="device-frame__chrome">
+                  <img
+                    src="/screens/settlement.jpg"
+                    width={472}
+                    height={1024}
+                    alt="Settlement sheet — outstanding payments, remind, and mark paid"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </figure>
+              <p className="device-gallery__caption">
+                <span aria-hidden="true">3</span>
+                Settle
+              </p>
+            </li>
+          </ol>
         </div>
       </section>
 
