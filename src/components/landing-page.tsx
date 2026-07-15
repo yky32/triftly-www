@@ -71,10 +71,6 @@ export function LandingPage() {
             Explore places, plan every day on the map, spend with buddies — then
             share the story.
           </p>
-          <div className="hero__actions">
-            <a className="btn btn--primary" href="#download">Download for iPhone</a>
-            <a className="btn btn--ghost" href="#worlds">See the worlds</a>
-          </div>
         </div>
       </section>
 
