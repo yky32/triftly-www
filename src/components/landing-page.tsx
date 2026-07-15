@@ -174,29 +174,24 @@ export function LandingPage() {
             <p className="kicker">Spend</p>
             <h2>Split fairly. Settle gently.</h2>
             <p className="section__lede">
-              Track every receipt across currencies, see who owes whom, and
-              nudge buddies when it’s time to settle up.
+              See the trip total, who still owes, and settle with a quiet
+              Remind — or mark Paid when it’s done. Fair splits, no awkwardness.
             </p>
           </div>
-          <div className="device reveal" aria-hidden="true">
-            <div className="device__bezel glass">
-              <div className="phone-ui phone-ui--spend">
-                <div className="phone-ui__bar">
-                  <span>Wallet</span>
-                  <span className="pill pill--amber">Settle</span>
-                </div>
-                <div className="balance-card glass glass--dense">
-                  <span>Net position</span>
-                  <strong>HK$ 420</strong>
-                  <em>Owed to you</em>
-                </div>
-                <div className="ledger">
-                  <div className="ledger__row"><span>Alex</span><b>HK$ 180</b></div>
-                  <div className="ledger__row"><span>Jamie</span><b>HK$ 240</b></div>
-                  <div className="ledger__row ledger__row--muted"><span>You</span><b>Settled</b></div>
-                </div>
+          <div className="device device--photo reveal">
+            <div className="device__glow" aria-hidden="true" />
+            <figure className="device-frame">
+              <div className="device-frame__chrome">
+                <img
+                  src="/screens/settlement.jpg"
+                  width={472}
+                  height={1024}
+                  alt="Triftly settlement sheet for Tokyo 2026 — trip total, outstanding payments, and pay-back actions"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-            </div>
+            </figure>
           </div>
         </div>
       </section>
