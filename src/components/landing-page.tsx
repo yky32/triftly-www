@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { HeroBackground } from "@/components/hero-background";
+import { ShareDemo } from "@/components/share-demo";
 
 export function LandingPage() {
   useEffect(() => {
@@ -52,6 +53,7 @@ export function LandingPage() {
         <a href="#worlds">Worlds</a>
         <a href="#plan">Plan</a>
         <a href="#spend">Spend</a>
+        <a href="#share">Share</a>
       </nav>
       <a className="nav__cta" href="#download">Get the app</a>
     </header>
@@ -296,17 +298,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Share / statement strip */}
-      <section className="section statement" id="share">
-        <div className="statement__panel glass reveal">
-          <p className="kicker">Share</p>
-          <h2>Invite a buddy. Sync the trip.</h2>
-          <p>
-            One link. Live plans, spends, and map — so everyone travels in the
-            same world.
-          </p>
-        </div>
-      </section>
+      <ShareDemo />
 
       {/* Download */}
       <section className="section download" id="download">
