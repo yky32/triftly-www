@@ -1004,13 +1004,19 @@ h2 {
 }
 
 .feature--share .feature__grid {
-  grid-template-columns: minmax(220px, 0.85fr) minmax(320px, 1.35fr);
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: minmax(220px, 0.75fr) minmax(380px, 1.55fr);
+  gap: clamp(20px, 3.5vw, 40px);
   align-items: center;
 }
 
 .feature--share .feature__copy {
   max-width: 28rem;
+  /* Don't keep phones invisible if reveal never fires */
+}
+
+.feature--share .feature__copy.reveal {
+  opacity: 1;
+  transform: none;
 }
 
 .share-steps {
@@ -1047,14 +1053,38 @@ h2 {
 
 .share-demo {
   position: relative;
+  z-index: 1;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
-  gap: clamp(10px, 1.8vw, 18px);
+  justify-content: center;
+  gap: clamp(12px, 2vw, 22px);
   width: 100%;
+  min-height: 380px;
+  padding: 12px 4px 8px;
+  /* Always visible — this is the payoff of the section */
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.share-demo__glow {
+  position: absolute;
+  inset: 8% 2% 12%;
+  z-index: 0;
+  border-radius: 48%;
+  background:
+    radial-gradient(
+      ellipse at 50% 55%,
+      rgba(153, 246, 228, 0.55) 0%,
+      rgba(204, 251, 241, 0.22) 48%,
+      transparent 72%
+    );
+  filter: blur(26px);
+  pointer-events: none;
 }
 
 .share-phone {
+  position: relative;
+  z-index: 1;
   margin: 0;
   display: grid;
   gap: 12px;
@@ -1063,20 +1093,25 @@ h2 {
 }
 
 .share-phone__chrome {
-  width: clamp(148px, 18vw, 210px);
-  border-radius: 28px;
-  padding: 7px;
+  width: clamp(168px, 22vw, 248px);
+  border-radius: 32px;
+  padding: 8px;
   background: #141416;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 18px 40px -22px rgba(15, 23, 42, 0.42);
+    0 24px 48px -20px rgba(15, 23, 42, 0.5),
+    0 12px 28px -18px rgba(13, 148, 136, 0.35);
+}
+
+.share-phone--buddy .share-phone__chrome {
+  transform: translateY(10px);
 }
 
 .share-phone__screen {
   position: relative;
-  min-height: 300px;
-  border-radius: 22px;
-  padding: 14px 12px;
+  min-height: 340px;
+  border-radius: 25px;
+  padding: 16px 14px;
   background: linear-gradient(180deg, #fbfaf8, #f3f1ed);
   overflow: hidden;
 }
@@ -1091,12 +1126,26 @@ h2 {
 
 .share-bridge {
   position: relative;
-  width: clamp(28px, 4vw, 44px);
+  z-index: 1;
+  width: clamp(36px, 5vw, 56px);
   height: 3px;
-  margin-bottom: 120px;
+  margin-bottom: 140px;
   border-radius: 999px;
-  background: rgba(13, 148, 136, 0.18);
+  background: rgba(13, 148, 136, 0.22);
   flex: 0 0 auto;
+}
+
+.share-bridge__label {
+  position: absolute;
+  left: 50%;
+  top: -22px;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  white-space: nowrap;
 }
 
 .share-bridge__packet {
@@ -1485,18 +1534,19 @@ h2 {
 
   .share-demo {
     justify-content: center;
+    min-height: 320px;
   }
 
   .share-phone__chrome {
-    width: min(42vw, 180px);
+    width: min(44vw, 200px);
   }
 
   .share-phone__screen {
-    min-height: 260px;
+    min-height: 280px;
   }
 
   .share-bridge {
-    margin-bottom: 96px;
+    margin-bottom: 110px;
   }
 
   .feature__copy {

@@ -90,15 +90,16 @@ export function ShareDemo() {
         </div>
 
         <div
-          className={`share-demo reveal share-demo--${step}`}
+          className={`share-demo share-demo--${step}`}
           aria-live="polite"
         >
+          <div className="share-demo__glow" aria-hidden="true" />
           {/* Host */}
-          <figure className="share-phone">
+          <figure className="share-phone share-phone--host">
             <div className="share-phone__chrome">
               <div className="share-phone__screen share-phone__screen--host">
                 <header className="share-ui__top">
-                  <span className="share-ui__muted">You</span>
+                  <span className="share-ui__muted">You · Host</span>
                   <strong>Tokyo 2026</strong>
                 </header>
 
@@ -145,6 +146,11 @@ export function ShareDemo() {
           </figure>
 
           <div className="share-bridge" aria-hidden="true">
+            <span className="share-bridge__label">
+              {step === "invite" && "link"}
+              {step === "join" && "open"}
+              {step === "sync" && "live"}
+            </span>
             <span
               className={[
                 "share-bridge__packet",
@@ -156,7 +162,7 @@ export function ShareDemo() {
           </div>
 
           {/* Buddy */}
-          <figure className="share-phone">
+          <figure className="share-phone share-phone--buddy">
             <div className="share-phone__chrome">
               <div className="share-phone__screen share-phone__screen--buddy">
                 {step === "invite" && (
@@ -181,7 +187,7 @@ export function ShareDemo() {
                 {step === "sync" && (
                   <div className="share-ui__synced">
                     <header className="share-ui__top">
-                      <span className="share-ui__muted">Buddy</span>
+                      <span className="share-ui__muted">Buddy · Kary</span>
                       <strong>Tokyo 2026</strong>
                     </header>
                     <div className="share-ui__spot">
