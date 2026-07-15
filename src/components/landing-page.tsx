@@ -125,7 +125,7 @@ export function LandingPage() {
               decoding="async"
             />
             <span className="world-tile__place">Seoul</span>
-            <span className="world-tile__tag">Night markets</span>
+            <span className="world-tile__tag">Hanok lanes</span>
           </article>
           <article className="world-tile world-tile--bkk">
             <img
@@ -151,7 +151,7 @@ export function LandingPage() {
               decoding="async"
             />
             <span className="world-tile__place">Taipei</span>
-            <span className="world-tile__tag">Mountain mist</span>
+            <span className="world-tile__tag">Night bazaars</span>
           </article>
           <article className="world-tile world-tile--sg">
             <img

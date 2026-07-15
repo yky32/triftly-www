@@ -444,7 +444,7 @@ h2 {
 }
 
 .world-tile--sel::before {
-  background: linear-gradient(150deg, #0ea5e9, #0f766e 60%, #115e59);
+  background: linear-gradient(150deg, #94a3b8, #64748b 55%, #334155);
 }
 
 .world-tile--bkk::before {
@@ -452,7 +452,7 @@ h2 {
 }
 
 .world-tile--tpe::before {
-  background: linear-gradient(160deg, #115e59, #1e3a5f);
+  background: linear-gradient(160deg, #0f766e, #9a3412 70%);
 }
 
 .world-tile--sg::before {
