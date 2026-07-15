@@ -115,57 +115,59 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Plan — create → shape the days */}
+      {/* Plan — text left, devices right */}
       <section className="section feature feature--plan" id="plan">
-        <div className="feature__intro reveal">
-          <p className="kicker">Plan</p>
-          <h2>Days that move with you.</h2>
-          <p className="section__lede">
-            Create the trip with flights and buddies, then shape each day —
-            open maps, mark visited, add spend, or move a spot when plans change.
-          </p>
-        </div>
+        <div className="feature__grid">
+          <div className="feature__copy reveal">
+            <p className="kicker">Plan</p>
+            <h2>Days that move with you.</h2>
+            <p className="section__lede">
+              Create the trip with flights and buddies, then shape each day —
+              open maps, mark visited, add spend, or move a spot when plans change.
+            </p>
+          </div>
 
-        <div className="device-gallery device-gallery--static reveal">
-          <div className="device__stage" aria-hidden="true" />
-          <ol className="device-gallery__row">
-            <li className="device-gallery__item">
-              <figure className="device-frame">
-                <div className="device-frame__chrome">
-                  <img
-                    src="/screens/plan-create.jpg"
-                    width={472}
-                    height={1024}
-                    alt="Create a new trip — destination, dates, flights, currency, and travel buddies"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </figure>
-              <p className="device-gallery__caption">
-                <span aria-hidden="true">1</span>
-                Create
-              </p>
-            </li>
-            <li className="device-gallery__item">
-              <figure className="device-frame">
-                <div className="device-frame__chrome">
-                  <img
-                    src="/screens/plan-days.jpg"
-                    width={472}
-                    height={1024}
-                    alt="Plan tab for Tokyo 2026 — day itinerary with spot actions like open in maps and add expense"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </figure>
-              <p className="device-gallery__caption">
-                <span aria-hidden="true">2</span>
-                Shape
-              </p>
-            </li>
-          </ol>
+          <div className="device-gallery device-gallery--static reveal">
+            <div className="device__stage" aria-hidden="true" />
+            <ol className="device-gallery__row">
+              <li className="device-gallery__item">
+                <figure className="device-frame">
+                  <div className="device-frame__chrome">
+                    <img
+                      src="/screens/plan-create.jpg"
+                      width={472}
+                      height={1024}
+                      alt="Create a new trip — destination, dates, flights, currency, and travel buddies"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </figure>
+                <p className="device-gallery__caption">
+                  <span aria-hidden="true">1</span>
+                  Create
+                </p>
+              </li>
+              <li className="device-gallery__item">
+                <figure className="device-frame">
+                  <div className="device-frame__chrome">
+                    <img
+                      src="/screens/plan-days.jpg"
+                      width={472}
+                      height={1024}
+                      alt="Plan tab for Tokyo 2026 — day itinerary with spot actions like open in maps and add expense"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </figure>
+                <p className="device-gallery__caption">
+                  <span aria-hidden="true">2</span>
+                  Shape
+                </p>
+              </li>
+            </ol>
+          </div>
         </div>
       </section>
 
