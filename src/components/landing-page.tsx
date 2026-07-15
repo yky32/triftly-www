@@ -126,8 +126,8 @@ export function LandingPage() {
           </p>
         </div>
 
-        <div className="device-gallery device-gallery--pair reveal">
-          <div className="device__glow" aria-hidden="true" />
+        <div className="device-gallery device-gallery--static reveal">
+          <div className="device__stage" aria-hidden="true" />
           <ol className="device-gallery__row">
             <li className="device-gallery__item">
               <figure className="device-frame">
@@ -147,7 +147,7 @@ export function LandingPage() {
                 Create
               </p>
             </li>
-            <li className="device-gallery__item device-gallery__item--mid">
+            <li className="device-gallery__item">
               <figure className="device-frame">
                 <div className="device-frame__chrome">
                   <img
