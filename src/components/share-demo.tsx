@@ -10,7 +10,7 @@ const STEPS = [
 
 type StepId = (typeof STEPS)[number]["id"];
 
-const STEP_MS = 3200;
+const STEP_MS = 2000;
 
 export function ShareDemo() {
   const [step, setStep] = useState<StepId>("invite");
