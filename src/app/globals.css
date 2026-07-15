@@ -566,8 +566,8 @@ h2 {
 }
 
 .feature--plan .feature__grid {
-  grid-template-columns: minmax(240px, 0.92fr) minmax(280px, 1.2fr);
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: minmax(220px, 0.7fr) minmax(360px, 1.5fr);
+  gap: clamp(20px, 3.5vw, 40px);
   align-items: center;
 }
 
@@ -786,7 +786,7 @@ h2 {
 
 .device-gallery--static .device-gallery__item .device-frame,
 .device-gallery--static .device-gallery__item--mid .device-frame {
-  width: clamp(132px, 16vw, 188px);
+  width: clamp(185px, 22.4vw, 263px);
   will-change: auto;
 }
 
@@ -1132,7 +1132,7 @@ h2 {
   }
 
   .device-gallery--static .device-gallery__item .device-frame {
-    width: min(42vw, 168px);
+    width: min(59vw, 235px);
   }
 
   .device-gallery.reveal.is-visible .device-gallery__item:nth-child(1) .device-frame {
