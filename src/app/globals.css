@@ -588,7 +588,7 @@ h2 {
 }
 
 .device-gallery__item .device-frame {
-  width: clamp(128px, 20vw, 196px);
+  width: clamp(147px, 23vw, 225px);
 }
 
 .device-gallery__item--mid {
@@ -596,7 +596,7 @@ h2 {
 }
 
 .device-gallery__item--mid .device-frame {
-  width: clamp(148px, 23vw, 228px);
+  width: clamp(170px, 26.5vw, 262px);
   transform: translateY(-14px);
 }
 
@@ -929,7 +929,7 @@ h2 {
 
   .device-gallery__item .device-frame,
   .device-gallery__item--mid .device-frame {
-    width: min(58vw, 200px);
+    width: min(67vw, 230px);
     transform: none;
   }
 }
