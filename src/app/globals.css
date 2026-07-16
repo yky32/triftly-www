@@ -33,6 +33,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keep section titles clear of the floating nav + iPhone safe area */
+  scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
 }
 
 body {
@@ -295,8 +297,39 @@ a {
 }
 
 @media (max-width: 720px) {
+  .nav {
+    top: max(12px, env(safe-area-inset-top, 0px));
+    width: auto;
+    max-width: calc(100% - 24px);
+    gap: 14px;
+    padding: 7px 7px 7px 11px;
+    justify-content: space-between;
+  }
+
   .nav__links {
     display: none;
+  }
+
+  .nav__brand {
+    padding-right: 2px;
+    font-size: 14px;
+  }
+
+  .nav__cta {
+    padding: 10px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Quieter sheen on the shorter mobile pill */
+  .nav::before {
+    width: 48%;
+    right: 4%;
+    opacity: 0.7;
+  }
+
+  .nav::after {
+    opacity: 0.4;
   }
 }
 
@@ -1703,9 +1736,13 @@ h2 {
 /* ——— Responsive ——— */
 @media (max-width: 960px) {
   .hero {
-    align-items: center;
-    min-height: 92svh;
-    padding-top: calc(var(--nav-h) + 28px);
+    align-items: end;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding:
+      calc(var(--nav-h) + max(20px, env(safe-area-inset-top, 0px)))
+      clamp(18px, 5vw, 28px)
+      max(56px, calc(28px + env(safe-area-inset-bottom, 0px)));
   }
 
   .hero__copy {
@@ -1715,12 +1752,72 @@ h2 {
     margin-inline: auto;
   }
 
+  .hero__brand {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+
   .hero__lede {
-    max-width: 38ch;
+    max-width: 28ch;
   }
 
   .hero__actions {
     justify-content: center;
+  }
+
+  .hero__video-shade {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(247, 245, 242, 0.35) 0%,
+        rgba(236, 253, 245, 0.12) 38%,
+        transparent 58%
+      ),
+      linear-gradient(
+        180deg,
+        transparent 40%,
+        rgba(247, 245, 242, 0.55) 78%,
+        rgba(247, 245, 242, 0.88) 100%
+      );
+  }
+
+  .section {
+    padding:
+      clamp(48px, 12vw, 88px)
+      clamp(18px, 5vw, 28px)
+      clamp(48px, 12vw, 88px);
+  }
+
+  .section__intro {
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .section__intro .section__lede {
+    margin-inline: auto;
+  }
+
+  .world-rail {
+    grid-auto-columns: minmax(72vw, 260px);
+    gap: 12px;
+    margin-inline: -18px;
+    padding-inline: 18px;
+  }
+
+  .world-tile {
+    min-height: 300px;
+    border-radius: 24px;
+    padding: 20px;
+  }
+
+  .world-tile--featured {
+    transform: none;
+    outline-offset: 2px;
+  }
+
+  .story-bridge {
+    padding-inline: clamp(18px, 5vw, 28px);
+    font-size: clamp(17px, 4.6vw, 22px);
   }
 
   .feature__grid,
@@ -1731,7 +1828,7 @@ h2 {
 
   .feature--plan .feature__grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 
   .feature--plan .feature__copy {
@@ -1744,19 +1841,32 @@ h2 {
   }
 
   .feature--plan .device-gallery--static {
-    justify-self: center;
+    justify-self: stretch;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
+  /* Plan: swipe like Spend — never blow page width */
   .feature--plan .device-gallery--static .device-gallery__row {
-    justify-content: center;
-    overflow: visible;
-    scroll-snap-type: none;
-    padding-inline: 0;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-inline: 18px;
+    margin-inline: -18px;
+    gap: 14px;
+    scrollbar-width: none;
+  }
+
+  .feature--plan .device-gallery--static .device-gallery__row::-webkit-scrollbar {
+    display: none;
   }
 
   .feature--share .feature__grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 22px;
+    max-width: 100%;
   }
 
   .feature--share .feature__copy {
@@ -1773,12 +1883,24 @@ h2 {
   }
 
   .share-demo {
-    justify-content: center;
-    min-height: 340px;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 0 4px;
+    overflow: visible;
+  }
+
+  .share-phone {
+    width: 100%;
   }
 
   .share-phone__chrome {
-    width: min(44vw, 210px);
+    width: min(100%, 320px);
+    margin-inline: auto;
   }
 
   .share-phone--host .share-phone__chrome,
@@ -1787,11 +1909,25 @@ h2 {
   }
 
   .share-phone__screen {
-    min-height: 300px;
+    min-height: 280px;
   }
 
   .share-bridge {
-    margin-bottom: 120px;
+    width: 2px;
+    height: 36px;
+    margin: 0 auto;
+    background: linear-gradient(
+      180deg,
+      rgba(13, 148, 136, 0.15),
+      rgba(13, 148, 136, 0.5),
+      rgba(13, 148, 136, 0.15)
+    );
+  }
+
+  .share-bridge__label {
+    top: 50%;
+    left: calc(100% + 10px);
+    transform: translateY(-50%);
   }
 
   .feature__copy {
@@ -1809,6 +1945,7 @@ h2 {
 
   .device-gallery {
     margin-inline: -12px;
+    max-width: calc(100% + 24px);
   }
 
   .device-gallery__row {
@@ -1831,11 +1968,11 @@ h2 {
 
   .device-gallery__item .device-frame,
   .device-gallery__item--mid .device-frame {
-    width: min(67vw, 230px);
+    width: min(72vw, 260px);
   }
 
   .device-gallery--static .device-gallery__item .device-frame {
-    width: min(59vw, 235px);
+    width: min(72vw, 260px);
   }
 
   .device-gallery.reveal.is-visible .device-gallery__item:nth-child(1) .device-frame {
@@ -1862,6 +1999,66 @@ h2 {
 
   .device-gallery--static .device-gallery__item:hover .device-frame {
     transform: none !important;
+  }
+
+  .btn--store {
+    min-width: 0;
+    width: min(100%, 320px);
+  }
+
+  .download__panel {
+    padding: 28px 20px;
+    margin-inline: 0;
+    border-radius: 24px;
+  }
+
+  .footer {
+    padding-bottom: max(28px, env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* iPhone-class phones (~402 CSS px and below) */
+@media (max-width: 430px) {
+  .nav {
+    gap: 12px;
+  }
+
+  .hero__headline {
+    font-size: clamp(20px, 5.8vw, 26px);
+  }
+
+  .hero__lede {
+    font-size: 16px;
+  }
+
+  .section__lede {
+    font-size: 15.5px;
+  }
+
+  .device-gallery__item .device-frame,
+  .device-gallery__item--mid .device-frame,
+  .device-gallery--static .device-gallery__item .device-frame {
+    width: min(78vw, 288px);
+  }
+
+  .device-frame__chrome {
+    border-radius: 36px;
+    padding: 9px;
+  }
+
+  .device-frame__chrome img {
+    border-radius: 28px;
+  }
+
+  .share-phone__screen {
+    min-height: 250px;
+    padding: 18px 16px;
+    border-radius: 24px;
+  }
+
+  .share-steps__btn {
+    padding: 8px 12px;
+    font-size: 12.5px;
   }
 }
 
