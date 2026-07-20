@@ -7,9 +7,40 @@ import { ShareDemo } from "@/components/share-demo";
 export function LandingPage() {
   useEffect(() => {
     const nav = document.querySelector<HTMLElement>("[data-nav]");
+    // Direction-aware chrome: scroll down → icon-only; scroll up → full bar.
+    let lastY = window.scrollY;
+    let minimal = false;
+    const TOP_ALWAYS_EXPAND = 48;
+    const DIRECTION_DELTA = 6;
+
+    const brandLabel = nav?.querySelector<HTMLElement>(".nav__brand span");
+    const navMenu = nav?.querySelector<HTMLElement>(".nav__links");
+    const cta = nav?.querySelector<HTMLElement>(".nav__cta");
+
     const onScroll = () => {
       if (!nav) return;
-      nav.classList.toggle("is-scrolled", window.scrollY > 12);
+      const y = window.scrollY;
+      nav.classList.toggle("is-scrolled", y > 12);
+
+      if (y <= TOP_ALWAYS_EXPAND) {
+        minimal = false;
+      } else if (y > lastY + DIRECTION_DELTA) {
+        minimal = true;
+      } else if (y < lastY - DIRECTION_DELTA) {
+        minimal = false;
+      }
+
+      nav.classList.toggle("is-minimal", minimal);
+      nav.setAttribute("data-nav-state", minimal ? "minimal" : "standard");
+      // Keep collapsed chrome out of the accessibility tree while hidden.
+      brandLabel?.setAttribute("aria-hidden", minimal ? "true" : "false");
+      navMenu?.setAttribute("aria-hidden", minimal ? "true" : "false");
+      cta?.setAttribute("aria-hidden", minimal ? "true" : "false");
+      if (cta instanceof HTMLElement) {
+        if (minimal) cta.setAttribute("tabindex", "-1");
+        else cta.removeAttribute("tabindex");
+      }
+      lastY = y;
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
